@@ -47,4 +47,32 @@ class Estoque:
 
         return resultado
     
+    def editar(self, codigo, nome, categoria, preco, quantidade):
+
+        produto = self.buscar_codigo(codigo)
+
+        if produto:
+
+            produto.nome = nome
+            produto.categoria = categoria
+            produto.preco = preco
+            produto.quantidade = quantidade
+
+            return True
+
+        return False
+
+
+    def remover(self, codigo):
+
+        produto = self.buscar_codigo(codigo)
+
+        if produto:
+            self.produtos.remove(produto)
+            return True
+
+        return False
+        
+    
+    
     
