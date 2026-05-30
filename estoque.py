@@ -35,3 +35,16 @@ class Estoque:
                 fim = meio - 1
 
         return None
+    
+    def buscar_nome(self, nome):
+
+        resultado = []
+
+        for produto in self.produtos:
+
+            if nome.lower() in produto.nome.lower():
+                resultado.append(produto)
+
+        return resultado
+    
+    
