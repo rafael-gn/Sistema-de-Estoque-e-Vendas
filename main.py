@@ -62,6 +62,10 @@ def main():
                     print("Produto cadastrado com sucesso!")
                 else:
                     print("Código já cadastrado.")
+                    
+            if estoque.cadastrar(produto):
+                print("Produto cadastrado!")
+                print(estoque.produtos)
 
             # BUSCAR POR CÓDIGO
             elif opcao == "2":

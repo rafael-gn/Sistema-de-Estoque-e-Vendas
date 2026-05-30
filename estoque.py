@@ -15,6 +15,8 @@ class Estoque:
         self.produtos.sort(key=lambda p: p.codigo)
 
         return True
+    
+        
 
     def buscar_codigo(self, codigo):
 
