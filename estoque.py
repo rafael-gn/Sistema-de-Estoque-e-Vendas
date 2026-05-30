@@ -72,6 +72,20 @@ class Estoque:
             return True
 
         return False
+    
+    def vender(self, codigo, quantidade):
+
+        produto = self.buscar_codigo(codigo)
+
+        if not produto:
+            return False
+
+        if produto.quantidade < quantidade:
+            return False
+
+        produto.quantidade -= quantidade
+
+        return True
         
     
     
