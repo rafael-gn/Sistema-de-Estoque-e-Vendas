@@ -86,7 +86,38 @@ class Estoque:
         produto.quantidade -= quantidade
 
         return True
-        
+    
+    def listar_categoria(self, categoria):
+
+        return [
+            p for p in self.produtos
+            if p.categoria.lower() == categoria.lower()
+        ]
+
+
+    def estoque_baixo(self, limite):
+
+        return [
+            p for p in self.produtos
+            if p.quantidade < limite
+        ]
+
+
+    def maior_preco(self):
+
+        if not self.produtos:
+            return None
+
+        return max(self.produtos, key=lambda p: p.preco)
+
+
+    def menor_preco(self):
+
+        if not self.produtos:
+            return None
+
+        return min(self.produtos, key=lambda p: p.preco)
+            
     
     
     
